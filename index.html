@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- GOOGLEFONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <!-- STYLESHEETS LINK -->
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+
+</head>
+<body>
+    <main>
+
+        <section class="mapContainer">
+
+            <div class="map" id="map">
+            </div>
+
+            <div id="coordsText">
+            </div>
+
+        </section>
+
+        <section class="cards">
+            <section class="principalText">
+
+                <h2>Necesitamos que confirme su ubicación<br>
+                    Es esta su dirección?</h2>
+
+                <div class="btns">
+                    <button class="confirmBtn" onclick="confirm()" type="submit">Esta es mi dirección</button>
+                    <button class="deniedBtn" onclick="denied()">Esta no es mi dirección</button>
+                </div>
+
+            </section>
+
+            <section class="deniedText hidde">
+
+                <h2>Proporciona tus datos en los siguientes campos</h2>
+                <form action="get">
+                    <div>
+                        <input type="text" placeholder="dirección: Av. Example 1234" required>
+                        <input type="number" placeholder="N˚">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Comuna" required>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+
+            </section>
+        </section>
+    </main>
+
+    <script>
+        //MAP functions & variables
+            //Obtain location lat & lng
+            var lat = position.coords.lat;
+            var lng = position.coords.lng;
+
+            //iniciarMap function
+            function iniciarMap(){
+                // Mapa de coordenadas 
+                    var coord = {lat: lat, lng: lat};
+                    var map = new google.maps.Map(document.getElementById('map'),{
+                        zoom: 10,
+                        center: coord
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: coord,
+                        map: map
+                    });
+
+                    document.getElementById('coordsText').innerHTML = "<p>latitud: " + lat + "<br>" + "longitud: " + lng + "</p";
+            }
+
+        //Questions & answers
+            //confirm
+            function confirm(onclick) {
+                
+            }
+            //denied
+            function denied(onclick) {
+                document.querySelector('.principalText').classList.add('hidde');
+                document.querySelector('.deniedText').classList.remove('hidde');
+            }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.hidde {
+    visibility: hidden;
+    display: none !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background: whitesmoke;
+}
+
+/* SPECIFY */
+.mapContainer {
+    width: 100vw;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    .mapContainer .map {
+        width: 90vw;
+        height: 420px;
+    }
+
+.cards {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.principalText {
+    width: 95vw;
+    max-width: 800px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background-color: rgba(142, 242, 242, 0.3);
+    padding: 48px 25px;
+    border-radius: 25px;
+}
+    .principalText .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+        .principalText .btns button {
+            width: 220px;
+            height: 45px;
+            border-radius: 45px;
+            border: none;
+            transition: all .25s ease-in-out;
+        }
+        .principalText .btns button:first-of-type {
+            background-color: rgb(136, 198, 252);
+        }
+        .principalText .btns button:last-of-type {
+            background-color: rgb(255, 186, 125);
+        }
+            .principalText .btns button:hover {
+                width: 280px;
+                height: 50px;
+            }
+
+.deniedText {
+    width: 95vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    background-color: rgba(150, 255, 255, 0.3);
+    padding: 48px 25px;
+    border-radius: 25px;
+}
+    .deniedText h2 {
+        font-size: 18px;
+    }
+    .deniedText form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+    }
+        .deniedText form div:first-of-type {
+            width: max-content;
+            display: flex;
+            gap: 5px;
+        }
+            .deniedText form div:first-of-type input:first-of-type {
+                width: 230px;
+                height: 35px;
+                padding: 0 10px;
+            }
+            .deniedText form div:first-of-type input:last-of-type {
+                width: 65px;
+                height: 35px;
+                text-align: center;
+            }
+        .deniedText form div:last-of-type {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+            .deniedText form div:last-of-type input {
+                width: 300px;
+                height: 35px;
+                padding: 0 10px;
+            }
+            .deniedText form div:last-of-type button {
+                width: 80%;
+                height: 40px;
+                border-radius: 40px;
+                border:  none;
+                background: rgb(187, 255, 138);
+                transition: all 0.5s ease-in-out;
+            }
+                .deniedText form div:last-of-type button:hover {
+                    width: 100%;
+                }
